@@ -1,0 +1,30 @@
+{% extends 'hodbase.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="section no-pad-bot" id="index-banner">
+    </div>
+
+    <div>
+        <div class="section">
+            <!--   Icon Section   -->    
+            <div class="row"> 
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file"
+                   title="Upload transcript PDF file"
+                   name="transcript_pdf_file"
+                   style="border: 1px solid black; padding: 5px;"
+                   required="required">
+            <p>
+            <input type="submit"
+                   value="Upload"
+                   style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+        </form>
+
+    </div>
+    </div>
+    </div>
+
+
+{% endblock %}

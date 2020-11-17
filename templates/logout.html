@@ -1,0 +1,60 @@
+{% load staticfiles %}
+
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css
+
+        <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.css' %}"  media="screen,projection"/>
+        -->
+    <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection" />
+    <title>ARC BITS GOA</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row valign-wrapper" id="bodyWrap">
+
+        <div class="col s12 m6 offset-m3">
+          <h2 class="black-text" align="center">ARC</h2>
+          <div class="card darken-1">
+            <div class="card-content">
+              <span class="card-title"></span> {% comment %} <a href="javascript:void(0);">AUGSD, BITS Pilani, Goa</a>              {% endcomment %}
+
+              <h5 align="center">You have successfully logged out.</h5>
+              <div class="row">
+              <div class="card-action col s12 m4 offset-m4">
+                <a href="/">Home</a>
+                <a href="/login">Login</a>
+              </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <style>
+        #bodyWrap {
+          height:90vh;
+        }
+        body {
+          background-image: url("{% static 'assets/img/bits-goa-campus.jpg' %}"); opacity: .9;filter: alpha(opacity=.9);
+          background-repeat: no-repeat;
+          height: 100vh;
+          background-size: cover;
+        }
+      </style>
+
+    </div>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/materialize.js' %}"></script>
+
+  </html>

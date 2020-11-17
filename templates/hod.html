@@ -1,0 +1,294 @@
+{% extends 'hodbase.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="section no-pad-bot" id="index-banner">
+    </div>
+
+    <div>
+        <div class="section">
+            <!--   Icon Section   -->    
+            <div class="row">
+                {% if option == 1 %}
+                <div class="col s6 l12">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Transcript Applications</span>
+                            <table class="bordered highlight">
+                                <thead>
+                                    <tr>
+                                        <th>Reference No.</th>
+                                        <th>Student ID </th>
+                                        <th>Student Name </th>
+                                        <th>Amount</th>
+                                        <th>Approval Status</th>
+                                        <th>Payment Validation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for project in projects %}
+                                    <tr class="clickable" onclick="leaveclick(this)" data-id="{{ project.id }}">
+                                        <td>{{ project.refNo }}</td>
+                                        <td>{{ project.bitsID }}</td>
+                                        <td>{{ project.name }} </td>
+                                        <td>{{ project.amtcal }}</td>
+                                        <td>{% if project.approved == 1 %}Approved{% elif project.disapproved == 1 %}Disapproved{% elif project.printed == 1 %}Printed{% elif project.posted == 1 %}Posted
+                                            {% else %}In Process{% endif %}</td>
+                                        <td>{% if project.paymentApproved == 1 %}Approved{% elif project.paymentDisapproved == 1 %}Disapproved{% else %}In Process{% endif %}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                {% else %}
+                <div class="container">
+                    <div class="row">
+                    <div class="col s6 l12">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title">Transcript Dashboard</span>
+                                <div class="row">
+                                    <div class="col s8">
+                                        <div class="row">
+                                            <div class="col s6">
+                                                Payment Reference Number:
+                                            </div>
+                                            <div class="col s6">
+                                                {{ project.refNo }}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s6">
+                                                Student Name:
+                                            </div>
+                                            <div class="col s6">
+                                                {{ project.name }}
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col s6">
+                                                Student ID:
+                                            </div>
+                                            <div class="col s6">
+                                                {{ project.bitsID }}
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col s6">
+                                                Graduation Status:
+                                            </div>
+                                            <div class="col s6">
+                                                {{ project.gradStatus }}
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row">
+                                            <div class="col s6">
+                                                Payment Validation:
+                                            </div>
+                                            <div class="col s6">
+                                                {% if project.paymentApproved == 1 %}Approved{% elif project.paymentDisapproved == 1 %}Disapproved{% else %}In Process{% endif %}
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row">
+                                            <div class="col s6">
+                                                Paid Amount:
+                                            </div>
+                                            <div class="col s6">
+                                                {{ project.paidAmount }}
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row">
+                                            <div class="col s6">
+                                                Required Payment Amount:
+                                            </div>
+                                            <div class="col s6">
+                                                {{ project.amtcal }}
+                                            </div>
+                                        </div>
+                                        
+
+
+                                        <div class="row">
+                                            <div class="col s6">
+                                                Original Transcripts: 
+                                            </div>
+                                            <div class="col s6">
+                                                {{ project.origTranscript }}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s6">
+                                               Duplicate Transcripts: 
+                                            </div>
+                                            <div class="col s6">
+                                                {{ project.dupTranscripts }}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s6">
+                                            Number of Forwarding Letters: 
+                                            </div>
+                                            <div class="col s6">
+                                                {{ project.forwardingLetters }}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s6">
+                                            Phone Number: 
+                                            </div>
+                                            <div class="col s6">
+                                                {{ project.phone_number }}
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col s6">
+                                            E-mail: 
+                                            </div>
+                                            <div class="col s6">
+                                                {{ project.corrEmail }}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s6">
+                                            Hostel: 
+                                            </div>
+                                            <div class="col s6">
+                                                {{ project.hostel }}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s6">
+                                            Room Number: 
+                                            </div>
+                                            <div class="col s6">
+                                                {{ project.roomNo }}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s6">
+                                            PS-2 Station: 
+                                            </div>
+                                            <div class="col s6">
+                                                {{ project.ps2Station }}
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col s6">
+                                            Postal Address Location: 
+                                            </div>
+                                            <div class="col s6">
+                                                {{ project.postalAddressLocation }}
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col s6">
+                                            Postal Address: 
+                                            </div>
+                                            <div class="col s6">
+                                                {{ project.postalAddress }}
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col s6">
+                                            Number of sealed copies: 
+                                            </div>
+                                            <div class="col s6">
+                                                {{ project.sealedCopies }}
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col s6">
+                                            Soft copy or Hard copy: 
+                                            </div>
+                                            <div class="col s6">
+                                                {{ project.soft_hard_copy }}
+                                            </div>
+                                        </div>
+
+                                        {% for address in project.sealed_addresses.all %}
+                                        <div class="row">
+                                            <div class="col s6">
+                                            Seal Address {{ loop.index }}:  
+                                            </div>
+                                            <div class="col s6">
+                                                {{ address.addr }}
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                        
+
+                                    </div>
+                                </div>
+                                <form method="POST">
+                                    {% csrf_token %}
+                                    <div style="background-color:#eee; padding:15px;">
+                                    
+                                    <div class="col-md-12">
+                                        <div class="input-field col s12">
+                                            <input name ="group2" type="text" id="comment"/>
+                                            <label for="comment"> Comment </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col s4">
+                                            <input name="group1" type="radio" class="with-gap" id="leave-approve" value="1" {% if project.approved == True %} checked="checked" {% endif %}/>
+                                            <label for="leave-approve">Approve</label>
+                                        </div>
+                                        <div class="col s4">
+                                            <input name="group1" type="radio" class="with-gap" id="leave-disapprove" value="2" {% if project.disapproved == True %} checked="checked" {% endif %}/>
+                                            <label for="leave-disapprove">Disapprove</label>
+                                        </div>
+                                        <div class="col s4">
+                                            <input name="group1" type="radio" class="with-gap" id="leave-printed" value="3" {% if project.printed == True %} checked="checked" {% endif %}/>
+                                            <label for="leave-printed">Printed</label>
+                                        </div>
+                                        <div class="col s4">
+                                            <input name="group1" type="radio" class="with-gap" id="leave-posted" value="4" {% if project.posted == True %} checked="checked" {% endif %}/>
+                                            <label for="leave-posted">Posted</label>
+                                        </div>
+                                        <div class="col s4">
+                                            <input name="group1" type="radio" class="with-gap" id="leave-process" value="5" {% if project.inprocess == True %} checked="checked" {% endif %}/>
+                                            <label for="leave-process">In Process</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <a href="/arc" class="btn btn-block bg-green waves-effect" >CANCEL</a>
+                                        </div>
+                                        <div class="col s6 right-align">
+                                            <button class="btn btn-block bg-green waves-effect" type="submit">SUBMIT</button>
+                                        </div>
+                                    </div>
+                                    </div>
+
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+        <br><br>
+    </div>
+
+{% endblock %}
+

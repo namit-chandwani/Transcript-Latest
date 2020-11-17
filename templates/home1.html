@@ -1,0 +1,75 @@
+{% extends 'indexbase.html' %}
+{% load staticfiles %}
+{% block content %}
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+  <!-- <div class="card">
+    <div class="card-content">
+      <h1 class="header center orange-text darken-5">BITS Pilani, K.K. Birla Goa Campus</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">BITS Pilani, Goa Campus is one of the premier technical and science institutes for higher education in India. It was
+        started in 2004, with the first batch graduating in 2008.</h5>
+      </div>
+      {% comment %} <div class="row center">
+        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+      </div> {% endcomment %}
+      <br><br>
+    </div>
+  </div> -->
+</div>
+</div>
+
+
+  {% comment %} <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">SWD</h5>
+          <p class="grey-text text-lighten-4">Student Welfare Division</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">OSDLabs</a>
+      </div>
+    </div>
+  </footer> {% endcomment %}
+
+  <style>
+    img{
+      object-fit: cover;
+    }
+    body {
+      background-image: url("{% static 'img/bits-goa1.jpg' %}"); opacity: .9;filter: alpha(opacity=.9);
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      height: 100px;
+      background-position: center;
+      background-size: cover;
+    }
+  </style>
+{% endblock %}
+

@@ -1,0 +1,16 @@
+*.log
+*.pot
+*.pyc
+local_settings.py
+.env
+db.sqlite3
+node_modules
+migrations
+static
+.vscode/
+studentimgs
+studentimg
+*.swp
+*.patch
+swd/email_info.py
+swd/local_settings.py
